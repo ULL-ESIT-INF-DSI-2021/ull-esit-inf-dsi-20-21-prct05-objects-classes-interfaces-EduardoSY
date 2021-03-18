@@ -18,5 +18,5 @@ for (let element of cosas) {
     } else {
         aux_lavadoras.push(element);
     }
-    
+    // Ordeno el array con las lavadoras segun precio y lo muestro
 }
