@@ -17,4 +17,11 @@ for (let element of cosas) {
     else {
         aux_lavadoras.push(element);
     }
+    // Ordeno el array con las lavadoras segun precio y lo muestro
+    aux_lavadoras.sort(function (a, b) {
+        return a.GetPrecio() - b.GetPrecio();
+    });
+    for (let element_lava of aux_lavadoras) {
+        console.log("Lavadora con precio -> " + element_lava.GetPrecio());
+    }
 }

@@ -13,10 +13,17 @@ let cosas: (Television|Lavadora)[] = [tele1, tele2,
 let aux_lavadoras: Lavadora[] = [];
 
 for (let element of cosas) {
-    if ("GetRes" in element) {
-        console.log("Television con precio -> " + element.GetPrecio());
-    } else {
-        aux_lavadoras.push(element);
-    }
-    // Ordeno el array con las lavadoras segun precio y lo muestro
+  if ("GetRes" in element) {
+    console.log("Television con precio -> " + element.GetPrecio());
+  } else {
+    aux_lavadoras.push(element);
+  }
+  // Ordeno el array con las lavadoras segun precio y lo muestro
+  aux_lavadoras.sort(function(a, b) {
+    return a.GetPrecio() - b.GetPrecio();
+  });
+  
+  for (let element_lava of aux_lavadoras) {
+    console.log("Lavadora con precio -> " + element_lava.GetPrecio());
+  }
 }
