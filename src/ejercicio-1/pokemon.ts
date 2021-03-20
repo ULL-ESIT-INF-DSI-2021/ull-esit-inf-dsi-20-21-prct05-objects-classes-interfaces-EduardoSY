@@ -4,33 +4,44 @@ export class Pokemon {
   private altura: number;
   private tipo: string;
   private stats = new Array(4);
-  public hp_combate: number = 0;
+  public hpCombate: number = 0;
 
-  constructor(public readonly nombre_entrada: string,
-  public readonly peso_entrada: number, public readonly altura_entrada: number,
-  public readonly tipo_entrada: string,
-  public readonly stats_entrada: number[]) {
-    this.nombre = nombre_entrada;
-    this.peso = peso_entrada;
-    this.altura = altura_entrada;
-    this.tipo = tipo_entrada;
-    this.stats = stats_entrada;
-    this.hp_combate = this.stats[3];
+  constructor(nombreEntrada: string, pesoEntrada: number,
+      alturaEntrada: number, tipoEntrada: string,
+      statsEntrada: number[]) {
+    this.nombre = nombreEntrada;
+    this.peso = pesoEntrada;
+    this.altura = alturaEntrada;
+    this.tipo = tipoEntrada;
+    this.stats = statsEntrada;
+    this.hpCombate = this.stats[3];
   }
 
-  get_name() {
+  getName() {
     return this.nombre;
   }
-  get_type() {
+  getType() {
     return this.tipo;
   }
-  get_attack() {
+  getAttack() {
     return this.stats[0];
   }
-  get_def() {
+  getDef() {
     return this.stats[1];
   }
-  get_maxHP() {
+  getMaxHP() {
     return this.stats[3];
+  }
+  getAltura() {
+    return this.altura;
+  }
+  getPeso() {
+    return this.peso;
+  }
+
+  showData() {
+    console.log("Pokemon -> " + this.getName() + " Tipo: " +
+    this.getType() + " Atk. " + this.getAttack() + " Def. " +
+    this.getDef() + " HP. " + this.getMaxHP());
   }
 };
