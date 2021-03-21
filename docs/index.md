@@ -19,7 +19,7 @@ El resto será completamente igual.
 
 - **Clase Pokemon**
 
-[Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-1/pokemon.ts)
+  [Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-1/pokemon.ts)
 
     Vamos a diseñar una clase para representar a los pokemon. Cada pokemon tiene una serie de atributos como son el nombre, el peso y altura, el tipo y sus 4 características básicas: ataque, defensa, velocidad y salud.
 
@@ -28,6 +28,7 @@ El resto será completamente igual.
     En cuanto a funciones tenemos:
       - Getters
       - `showData()` Esta funcion muestra el nombre el pokemon, su tipo, su ataque, defensa y salud máxima.
+      
       ```typescript
       showData() {
       console.log("Pokemon -> " + this.getName() + " Tipo: " +
@@ -35,12 +36,12 @@ El resto será completamente igual.
       this.getDef() + " HP. " + this.getMaxHP());
       }
       ```
-
+      
     Con esta clase hecha ya podemos representar cualquier pokemon que queramos.
 
 - **Clase Combat**
 
-[Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-1/combat.ts)
+  [Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-1/combat.ts)
 
   Ahora es turno de la clase **Combat**. La idea de esta clase es represenatar un combate entre dos pokemon por lo que, como es de esperar, debemos darle dos pokemon con los que luchar.
   Además de almacenar los dos pokemon del combate en la clase, vamos a almacenar un 3 atributo: un array de dos elementos donde guardaremos el daño que realiza cada pokemon en base
