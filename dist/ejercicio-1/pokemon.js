@@ -3,11 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Pokemon = void 0;
 class Pokemon {
     constructor(nombreEntrada, pesoEntrada, alturaEntrada, tipoEntrada, statsEntrada) {
-        this.nombreEntrada = nombreEntrada;
-        this.pesoEntrada = pesoEntrada;
-        this.alturaEntrada = alturaEntrada;
-        this.tipoEntrada = tipoEntrada;
-        this.statsEntrada = statsEntrada;
         this.stats = new Array(4);
         this.hpCombate = 0;
         this.nombre = nombreEntrada;
@@ -31,6 +26,12 @@ class Pokemon {
     }
     getMaxHP() {
         return this.stats[3];
+    }
+    getAltura() {
+        return this.altura;
+    }
+    getPeso() {
+        return this.peso;
     }
     showData() {
         console.log("Pokemon -> " + this.getName() + " Tipo: " +
