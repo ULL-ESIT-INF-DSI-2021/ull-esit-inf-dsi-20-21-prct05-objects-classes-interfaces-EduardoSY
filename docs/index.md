@@ -10,7 +10,6 @@ opcional cómo usar el debugger de VSCode para Typescript así como comenzar a f
 Antes de comenzar con el desarrollo de código fuente vamos a generar nuestra estructura de trabajo. En este caso será algo diferente. En lugar de tener simplemente un directorio **/src** donde almacenamos los diferentes ejercicios, vamos a hacer un directorio por cada ejercicio. Siempre que trabajemos con clases se recomienda crear un directorio independiente para cada ejercicio y, dentro de ese directorio, un fichero independiente para cada clase.
 El resto será completamente igual.
 
-
 ## 3. Desarrollo de la práctica
 
 **[Acceso a la documentación generada con Typedoc](./docum/index.html)**
@@ -18,6 +17,8 @@ El resto será completamente igual.
 **[Acceso al directorio de codigo fuente](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src)**
 
 **[Acceso al directorio de pruebas unitarias](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/tests)**
+
+Para tener el planteamiento completo de los ejercicios puede acceder al [Guión práctica 5](https://ull-esit-inf-dsi-2021.github.io/prct05-objects-classes-interfaces/).
 
 ### EJERCICIO 1 - Pokedex
 
@@ -299,15 +300,54 @@ El resto será completamente igual.
 
 ### EJERCICIO 3 - Medios de transporte
 
+  [Acceso al código del ejercicio](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-3)
+
+  [Acceso a las pruebas del ejercicio](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/tests/ejercicio-3-tests)
+
 - **Interface Movable**
+
   Tal y como nos pide el ejercicio, debemos representar una interfaz denominada Movable. Esta interfaz contiene os atributos que, a mi criterio, son necesarios para cualquier tipo de vehículo.
 
   Estos son: nombre del vehículo (por ejemplo, una marca), numero de ruedas, velocidad a la que circula y capacidad de transporte que tiene.
+  ```typescript
+  export interface Movable {
+  nombre: string;
+  nRuedas: number;
+  velocidad: number;
+  capacidad: number;
+  }
+  ```
 
 - **Clases Coche, Moto, Bicicleta, Patin, Peaton, Tren**
+
   Todas estas clases son iguales. Todas extienden la interfaz Movable. Además, todas tienen sus getters para poder acceder a los atributos de cada una.
 
+  Aquí un ejemplo con la clase coche:
+  ```typescript
+  import {Movable} from './movable';
+  export class Coche implements Movable {
+    constructor(public nombre: string, public nRuedas: number,
+      public velocidad: number, public capacidad: number) {
+    }
+    public getNombre() {
+      return this.nombre;
+    }
+    public getCapacidad() {
+      return this.capacidad;
+    }
+    public getVelocidad() {
+      return this.velocidad;
+    }
+    ...
+    ...
+    Resto de getters
+    ...
+    ...
+  };
+  ```
+
 - **Clase Street**
+
   Esta clase es la que representará a la calle. Para nuestro caso vamos a definir que la calle necesita:
   - Nombre de la calle
   - Localización de la calle
@@ -319,21 +359,70 @@ El resto será completamente igual.
   Dentro de esta clase tenemos las siguientes funciones:
 
   - `infoCalle` El objetivo de esta función es mostrar cómo está la situación en la calle. Nos muestra cuántos vehículos de cada tipo están circulando por la calle en forma de tabla.
+  ```typescript
+    public infoCalle() {
+    console.log("Vehiculos circulando en " + this.calle +
+    " Direccion: " + this.direccion);
+    console.log("-> CANTIDAD MOTOS = " + this.nMoto.length);
+    console.table(this.nMoto);
+    console.log("-> CANTIDAD COCHES = " + this.nCoche.length);
+    console.table(this.nCoche);
+    ...
+    ...
+    ...
+    }
+  ```
 
   - `addVehiculo(vehiculo)` Esta funcion nos permite agregar un vehículo a la calle. Como recordamos, dentro de la calle tenemos distintos tipos de vehículos que son almacenados en arrays.
 
-    Una vez hemos recibido el vehículo averiguamos qué tipo es, es decir, si es un coche, una moto, etc. Para ello hacemos uso de **instanceof**. Entonces, dependiendo del tipo hacemos un push al array correspondiente.
+  Una vez hemos recibido el vehículo averiguamos qué tipo es, es decir, si es un coche, una moto, etc. Para ello hacemos uso de **instanceof**. Entonces, dependiendo del tipo hacemos un push al array correspondiente.
+  ```typescript
+  public addVehiculo(vehiculo: Moto|Coche|Bicicleta|Patin|Peaton|Tren) {
+    if (vehiculo instanceof Moto) {
+      this.nMoto.push(vehiculo);
+    } else if (vehiculo instanceof Coche) {
+      this.nCoche.push(vehiculo);
+    } else if (vehiculo instanceof Bicicleta) {
+      this.nBici.push(vehiculo);
+    } else if (vehiculo instanceof Patin) {
+      this.nPatin.push(vehiculo);
+    } else if (vehiculo instanceof Peaton) {
+      this.nPeaton.push(vehiculo);
+    } else {
+      this.nTren.push(vehiculo);
+    }
+  }
+  ```
 
   - `delVehiculo(vehiculo)` Esta funcion hace lo contrario a la anterior. En lugar de añadir un vehiculo lo que hace es eliminarlo.
   El procedimiento es el mismo. Averiguamos su tipo para saber en qué lista está alojado. Una vez lo sabemos hacemos uso de **splice**. A esta función le pasamos la posición del elemento a borrar y la cantidad a borrar a partir de el. En este caso solo queremos borrar uno asi que pondremos un uno. 
 
-    La posición la sacamos gracias a **indexOf**
+  La posición la sacamos gracias a **indexOf**
 
-    Entonces el comando queda algo así en la caso de una moto.
+  Entonces el comando queda algo así en la caso de una moto.
 
-    ```typescript
-    this.nMoto.splice(this.nMoto.indexOf(vehiculo), 1);
-    ```
+  ```typescript
+  this.nMoto.splice(this.nMoto.indexOf(vehiculo), 1);
+  ```
+
+  Esta sería la funcioń completa:
+  ```typescript
+  public delVehiculo(vehiculo: Moto|Coche|Bicicleta|Patin|Peaton|Tren) {
+    if (vehiculo instanceof Moto) {
+      this.nMoto.splice(this.nMoto.indexOf(vehiculo), 1);
+    } else if (vehiculo instanceof Coche) {
+      this.nCoche.splice(this.nCoche.indexOf(vehiculo), 1);
+    } else if (vehiculo instanceof Bicicleta) {
+      this.nBici.splice(this.nBici.indexOf(vehiculo), 1);
+    } else if (vehiculo instanceof Patin) {
+      this.nPatin.splice(this.nPatin.indexOf(vehiculo), 1);
+    } else if (vehiculo instanceof Peaton) {
+      this.nPeaton.splice(this.nPeaton.indexOf(vehiculo), 1);
+    } else {
+      this.nTren.splice(this.nTren.indexOf(vehiculo), 1);
+    }
+  }
+  ```
 
   - `ordenarVelocidad()`: Esta última función nos permite ordenar cada array de vehículos en base a la velocidad a la que circulan. Serán ordenados de menor a mayor velocidad.
 
@@ -351,4 +440,42 @@ El resto será completamente igual.
 
     Repetimos este proceso con cada uno de los arrays.
 
+    ```typescript
+    public ordenarVelocidad() {
+    this.nMoto.sort(function(a, b) {
+      return a.getVelocidad() - b.getVelocidad();
+    });
+    this.nCoche.sort(function(a, b) {
+      return a.getVelocidad() - b.getVelocidad();
+    });
+    this.nBici.sort(function(a, b) {
+      return a.getVelocidad() - b.getVelocidad();
+    });
+    this.nPatin.sort(function(a, b) {
+      return a.getVelocidad() - b.getVelocidad();
+    });
+    this.nPeaton.sort(function(a, b) {
+      return a.getVelocidad() - b.getVelocidad();
+    });
+    this.nTren.sort(function(a, b) {
+      return a.getVelocidad() - b.getVelocidad();
+    });
+    console.log("\nVehiculos ordenador por VELOCIDAD\n---");
+  }
+  ```
 
+## 4. Conclusión
+Ya poco a poco vamos notando cómo la complejidad de las prácticas aumenta. Aunque ciertamente no es nada excesivamente complicado, algunos aspectos se me \"atragantaron\". Esto lo he podido notar en la correción presencial ya que, aunque el ejercicio no fue en absoluto dificl, tuve algunos problemas al inicio del ejercicio. Por ello me he dado cuenta de que debo profundizar más en los conceptos de TDD. 
+
+Además, cabe destacar que este tipo de ejercicios, con planteamientos tan amenos y dinámicos hace que la realización de las prácticas sea mucho más llevadera.
+
+## 5. Referencias
+- [Guión práctica 5](https://ull-esit-inf-dsi-2021.github.io/prct05-objects-classes-interfaces/): Guión de la práctica .
+- [Guía para crear un proyecto](https://ull-esit-inf-dsi-2021.github.io/typescript-theory/typescript-project-setup.html): Guía del profesor para crear un proyecto.
+- [Tutorial de instalación y configuracion Typedoc (Solo alumnos ULL)](https://drive.google.com/file/d/19LLLCuWg7u0TjjKz9q8ZhOXgbrKtPUme/view): Tutorial creado por el profesor sobre cómo instalar, configurar y utilizar Typedoc.
+- [Tutorial de instalación y configuración de Mocha y Chai en un proyecto TS (Solo alumnos ULL)](https://drive.google.com/file/d/1-z1oNOZP70WBDyhaaUijjHvFtqd6eAmJ/view): Tutorial creado por el profesor sobre cómo instalar, configurar y utilizar Mocha y Chai.
+- [Apuntes sobre objetos, clases e interfaces](https://ull-esit-inf-dsi-2021.github.io/typescript-theory/typescript-objects-classes-interfaces.html): Apuntes creados por el profesor sobre objetos, clases e interfaces.
+- [Guia de Typedoc](https://typedoc.org/guides/installation/): Guia oficial de Typedoc
+- [Guía de estilo APA](https://biblioguias.uam.es/citar/estilo_apa): Guía sobre los distintos estilos APA
+- [Formas de eliminar elementos de un array](https://love2dev.com/blog/javascript-remove-from-array/): Explicación de distintas formas de eliminar un elemento de un array.
+- [Cómo ordenar un array](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort): Explicación de cómo funciona la función sort acompañada de ejemplos.
