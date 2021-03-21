@@ -21,11 +21,22 @@ El resto será completamente igual.
 
 [Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-1/pokemon.ts)
 
-  Vamos a diseñar una clase para representar a los pokemon. Cada pokemon tiene una serie de atributos como son el nombre, el peso y altura, el tipo y sus 4 características básicas: ataque, defensa, velocidad y salud.
+    Vamos a diseñar una clase para representar a los pokemon. Cada pokemon tiene una serie de atributos como son el nombre, el peso y altura, el tipo y sus 4 características básicas: ataque, defensa, velocidad y salud.
 
-  Entonces, vamos a implementar cada una de estas carácterísticas como atributos privados de la clase. Además, vamos a implementar una variable que denominaremos **hpCombate** donde iremos almacenando la salud actual del pokemon durante el combate, es decir, los puntos de salud restantes después de cada ataque enemigo.
+    Entonces, vamos a implementar cada una de estas carácterísticas como atributos privados de la clase. Además, vamos a implementar una variable que denominaremos **hpCombate** donde iremos almacenando la salud actual del pokemon durante el combate, es decir, los puntos de salud restantes después de cada ataque enemigo.
 
-  Con esta clase hecha ya podemos representar cualquier pokemon que queramos.
+    En cuanto a funciones tenemos:
+      - Getters
+      - `showData()` Esta funcion muestra el nombre el pokemon, su tipo, su ataque, defensa y salud máxima.
+      ```typescript
+      showData() {
+      console.log("Pokemon -> " + this.getName() + " Tipo: " +
+      this.getType() + " Atk. " + this.getAttack() + " Def. " +
+      this.getDef() + " HP. " + this.getMaxHP());
+      }
+      ```
+
+    Con esta clase hecha ya podemos representar cualquier pokemon que queramos.
 
 - **Clase Combat**
 
@@ -47,7 +58,30 @@ El resto será completamente igual.
 
   Esta clase va a albergar distintos Pokemon en una base de datos. Esta base de datos será un array de Pokemon.
 
-  Dentro de esta clase tenemos algunas funciones para interactuar con la base de datos. Tenemos una función para añadir un pokemon **addPokemon(pokemon)**, una funcion para eliminar un pokemon de la pokedex **delPokemon(pokemon)** y una funcion para realizar una búsqueda en la pokedex, **buscarPokemon**.
+  Dentro de esta clase tenemos algunas funciones para interactuar con la base de datos:
+  - `addPokemon(pokemon)`: Funcion para añadir pokemon a la pokedex
+  ```typescript
+  public addPokemon(pokemon: Pokemon) {
+    this.datosPokemon.push(pokemon);
+  }
+  ```
+
+  una funcion para eliminar un pokemon de la pokedex **delPokemon(pokemon)** y una funcion para realizar una búsqueda en la pokedex, **buscarPokemon**.
+  ```typescript
+    public buscarPokemon(pokemon: Pokemon) {
+    let pos: number = -1;
+    this.datosPokemon.forEach((iter) => {
+      if (iter === pokemon) {
+        pos = this.datosPokemon.indexOf(iter);
+      }
+    });
+    if (pos == -1) {
+      return null;
+    } else {
+      return this.datosPokemon[pos];
+    }
+  }
+  ```
 
 ### EJERCICIO 2 - Gestor bibliográfico
 
