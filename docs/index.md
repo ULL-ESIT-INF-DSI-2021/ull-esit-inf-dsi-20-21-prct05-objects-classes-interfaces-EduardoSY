@@ -1,4 +1,4 @@
-# Práctica 4 - Arrays, tuplas y enumerados
+# Práctica 5 - Objetos, clases e interfaces
 * Elaborado por Eduardo Da Silva Yanes
 
 ## 1. Introducción
@@ -21,33 +21,33 @@ El resto será completamente igual.
 
 [Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-1/pokemon.ts)
 
-Vamos a diseñar una clase para representar a los pokemon. Cada pokemon tiene una serie de atributos como son el nombre, el peso y altura, el tipo y sus 4 características básicas: ataque, defensa, velocidad y salud.
+  Vamos a diseñar una clase para representar a los pokemon. Cada pokemon tiene una serie de atributos como son el nombre, el peso y altura, el tipo y sus 4 características básicas: ataque, defensa, velocidad y salud.
 
-Entonces, vamos a implementar cada una de estas carácterísticas como atributos privados de la clase. Además, vamos a implementar una variable que denominaremos **hpCombate** donde iremos almacenando la salud actual del pokemon durante el combate, es decir, los puntos de salud restantes después de cada ataque enemigo.
+  Entonces, vamos a implementar cada una de estas carácterísticas como atributos privados de la clase. Además, vamos a implementar una variable que denominaremos **hpCombate** donde iremos almacenando la salud actual del pokemon durante el combate, es decir, los puntos de salud restantes después de cada ataque enemigo.
 
-Con esta clase hecha ya podemos representar cualquier pokemon que queramos.
+  Con esta clase hecha ya podemos representar cualquier pokemon que queramos.
 
 - **Clase Combat**
 
 [Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-1/combat.ts)
 
-Ahora es turno de la clase **Combat**. La idea de esta clase es represenatar un combate entre dos pokemon por lo que, como es de esperar, debemos darle dos pokemon con los que luchar.
-Además de almacenar los dos pokemon del combate en la clase, vamos a almacenar un 3 atributo: un array de dos elementos donde guardaremos el daño que realiza cada pokemon en base
-al tipo de cada uno y la efectividad. Estos valores los obtenemos gracias a la funcion **calculoCombate**.
+  Ahora es turno de la clase **Combat**. La idea de esta clase es represenatar un combate entre dos pokemon por lo que, como es de esperar, debemos darle dos pokemon con los que luchar.
+  Además de almacenar los dos pokemon del combate en la clase, vamos a almacenar un 3 atributo: un array de dos elementos donde guardaremos el daño que realiza cada pokemon en base
+  al tipo de cada uno y la efectividad. Estos valores los obtenemos gracias a la funcion **calculoCombate**.
 
-Con todo lo establecido anteriormente podemos empezar el combate. En esta simulación **siempre** atacará primero el pokemon que esté como primer parámetro. La velocidad no va a influir en este contexto.
+  Con todo lo establecido anteriormente podemos empezar el combate. En esta simulación **siempre** atacará primero el pokemon que esté como primer parámetro. La velocidad no va a influir en este contexto.
 
-Mientras alguno de los dos pokemon esté vivo iremos realizando ataques por turno. Por cada ataque vamos a indicar quién ataca a quién y con cuanto daño. Además mostraremos la vida actual de cada combatiente.
+  Mientras alguno de los dos pokemon esté vivo iremos realizando ataques por turno. Por cada ataque vamos a indicar quién ataca a quién y con cuanto daño. Además mostraremos la vida actual de cada combatiente.
 
-Cuando acabe el combate se mostrará y retornará el ganador.
+  Cuando acabe el combate se mostrará y retornará el ganador.
 
 - **Clase Pokedex**
 
 [Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-1/pokedex.ts)
 
-Esta clase va a albergar distintos Pokemon en una base de datos. Esta base de datos será un array de Pokemon.
+  Esta clase va a albergar distintos Pokemon en una base de datos. Esta base de datos será un array de Pokemon.
 
-Dentro de esta clase tenemos algunas funciones para interactuar con la base de datos. Tenemos una función para añadir un pokemon **addPokemon(pokemon)**, una funcion para eliminar un pokemon de la pokedex **delPokemon(pokemon)** y una funcion para realizar una búsqueda en la pokedex, **buscarPokemon**.
+  Dentro de esta clase tenemos algunas funciones para interactuar con la base de datos. Tenemos una función para añadir un pokemon **addPokemon(pokemon)**, una funcion para eliminar un pokemon de la pokedex **delPokemon(pokemon)** y una funcion para realizar una búsqueda en la pokedex, **buscarPokemon**.
 
 ### EJERCICIO 2 - Gestor bibliográfico
 
@@ -81,9 +81,9 @@ Dentro de esta clase tenemos algunas funciones para interactuar con la base de d
   - `imprimirTabla()` se encarga de mostrar toda la información de la lista de artículos en forma de tabla.
 
   - `busqueda(clave)` se encarga de realizar una búsqueda entre los diferentes artículos buscando aquellos cuyas palabras clave coincidan con la que nosotros le hemos pasado.
-  Todos los artículos que coinciden se van guardando en un array de artículos que posteriormente serán devueltos.
+    Todos los artículos que coinciden se van guardando en un array de artículos que posteriormente serán devueltos.
 
-  Cabe destacar que esta función no está completa debido a que, en el ejercicio, se nos pedía que, además de buscar, debía poder filtrar por fecha, nombre, etc. Esta última parte de filtrar no la he podido implementar.
+    Cabe destacar que esta función no está completa debido a que, en el ejercicio, se nos pedía que, además de buscar, debía poder filtrar por fecha, nombre, etc. Esta última parte de filtrar no la he podido implementar.
 
   - `exportarAPA(clave)` busca los articulos que tienen como keyword a la clave que hemos pasado como parámetro. Para hacer esta búsqueda hacemos uso de la función explicada previamente.
 
