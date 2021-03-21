@@ -15,23 +15,35 @@ El resto será completamente igual.
 
 ### EJERCICIO 1 - Pokedex
 
-[Acceso a la documentación](./docum/index.html)
+[Acceso a la documentación generada con Typedoc](./docum/index.html)
 
 1. **Clase Pokemon**
-Vamos a diseñar una clase para representar a los pokemon. Cada pokemon tiene una serie de atributos como son el nombre, el peso y altura, el tipo y sus 4 características básicas:
-ataque, defensa, velocidad y salud.
+[Acceso al código de la clase]()
+
+Vamos a diseñar una clase para representar a los pokemon. Cada pokemon tiene una serie de atributos como son el nombre, el peso y altura, el tipo y sus 4 características básicas: ataque, defensa, velocidad y salud.
+
 Entonces, vamos a implementar cada una de estas carácterísticas como atributos privados de la clase. Además, vamos a implementar una variable que denominaremos **HPCOMBAT** donde iremos almacenando la salud actual del pokemon durante el combate, es decir, los puntos de salud restantes después de cada ataque enemigo.
 
-Con esta clase hecha ya podemos representar cualquier pokemon que querramos.
+Con esta clase hecha ya podemos representar cualquier pokemon que queramos.
 
 2. **Clase Combat**
+[Acceso al código de la clase]()
+
 Ahora es turno de la clase **Combat**. La idea de esta clase es represenatar un combate entre dos pokemon por lo que, como es de esperar, debemos darle dos pokemon con los que luchar.
 Además de almacenar los dos pokemon del combate en la clase, vamos a almacenar un 3 atributo: un array de dos elementos donde guardaremos el daño que realiza cada pokemon en base
 al tipo de cada uno y la efectividad. Estos valores los obtenemos gracias a la funcion **calculoCombate**.
 
 Con todo lo establecido anteriormente podemos empezar el combate. En esta simulación **siempre** atacará primero el pokemon que esté como primer parámetro. La velocidad no va a influir en este contexto.
+
 Mientras alguno de los dos pokemon esté vivo iremos realizando ataques por turno. Por cada ataque vamos a indicar quién ataca a quién y con cuanto daño. Además mostraremos la vida actual de cada combatiente.
 
+Cuando acabe el combate se mostrará y retornará el ganador.
+
 3. **Clase Pokedex**
+[Acceso al código de la clase]()
+
+Esta clase va a albergar distintos Pokemon en una base de datos. Esta base de datos será un array de Pokemon.
+
+Dentro de esta clase tenemos algunas funciones para interactuar con la base de datos. Tenemos una función para añadir un pokemon **addPokemon(pokemon)**, una funcion para eliminar un pokemon de la pokedex **delPokemon(pokemon)** y una funcion para realizar una búsqueda en la pokedex, **buscarPokemon**.
 
 

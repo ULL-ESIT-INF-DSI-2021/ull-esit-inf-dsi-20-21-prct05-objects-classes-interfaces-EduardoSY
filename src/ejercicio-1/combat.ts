@@ -23,6 +23,7 @@ export class Combat {
   /**
    * Funcion combatir. Lleva a cabo el combate entre los dos pokemon.
    * Cuando el combate finaliza muestra por pantalla en ganador.
+   * @returns Pokemon ganador del combate
    */
   combatir(): Pokemon {
     this.datos[0] = this.calculoCombate(this.poke1.getType(),
