@@ -111,3 +111,14 @@ Dentro de esta clase tenemos las siguientes funciones:
 - `addVehiculo(vehiculo)` Esta funcion nos permite agregar un vehículo a la calle. Como recordamos, dentro de la calle tenemos distintos tipos de vehículos que son almacenados en arrays.
 
   Una vez hemos recibido el vehículo averiguamos qué tipo es, es decir, si es un coche, una moto, etc. Para ello hacemos uso de **instanceof**. Entonces, dependiendo del tipo hacemos un push al array correspondiente.
+
+- `delVehiculo(vehiculo)` Esta funcion hace lo contrario a la anterior. En lugar de añadir un vehiculo lo que hace es eliminarlo.
+El procedimiento es el mismo. Averiguamos su tipo para saber en qué lista está alojado. Una vez lo sabemos hacemos uso de **splice**. A esta función le pasamos la posición del elemento a borrar y la cantidad a borrar a partir de el. En este caso solo queremos borrar uno asi que pondremos un uno. 
+
+  La posición la sacamos gracias a **indexOf**
+
+  Entonces el comando queda algo así en la caso de una moto.
+
+  ```typescript
+  this.nMoto.splice(this.nMoto.indexOf(vehiculo), 1);
+  ``
