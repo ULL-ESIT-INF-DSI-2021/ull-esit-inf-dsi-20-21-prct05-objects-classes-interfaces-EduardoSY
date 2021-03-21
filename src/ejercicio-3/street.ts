@@ -117,11 +117,11 @@ export class Street {
   }
 }
 
-let moto1: Moto = new Moto('Kawasaki', 2, 96, 2);
+/* let moto1: Moto = new Moto('Kawasaki', 2, 96, 2);
 let moto2: Moto = new Moto('Yamaha', 2, 78, 2);
 let coche1: Coche = new Coche('Opel', 4, 50, 4);
 let calle: Street = new Street('Calle Marquez', 'La Orotava',
     [], [], [moto1, moto2], [], [], []);
 calle.infoCalle();
 calle.delVehiculo(coche1);
-calle.infoCalle();
+calle.infoCalle();*/

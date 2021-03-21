@@ -122,3 +122,21 @@ El procedimiento es el mismo. Averiguamos su tipo para saber en qué lista está
   ```typescript
   this.nMoto.splice(this.nMoto.indexOf(vehiculo), 1);
   ``
+
+- `ordenarVelocidad()`: Esta última función nos permite ordenar cada array de vehículos en base a la velocidad a la que circulan. Serán ordenados de menor a mayor velocidad.
+
+  Para ordenar haremos uso de la función sort junto a una función que le pasamos como parámetro.
+
+  Así ordenariamos las motos:
+
+  ```typescript
+  this.nMoto.sort(function(a, b) {
+        return a.getVelocidad() - b.getVelocidad();
+      });
+  ```
+  Sort funciona de la siguiente manera. Le pasamos una función con los elementos a comparar. En este caso es a y b. Ahora hacemos la resta entre el atributo que estamos comparando, es decir, la velocidad.
+  Si el resultado es **menor que 0**, a se situa antes que b. Si el **resultado es 0 no hay ninguna modificación**. Si resulta que la resta da un **resultado mayor que 0** se coloca **b antes que a**.
+
+  Repetimos este proceso con cada uno de los arrays.
+
+
