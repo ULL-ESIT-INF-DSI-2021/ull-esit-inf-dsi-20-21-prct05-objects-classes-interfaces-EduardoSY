@@ -74,14 +74,14 @@ Esta clase será como una librería de referencias. Por tanto, para almacenar ca
 
 Para manipular esta base de datos tenemos las siguientes funciones:
 
-`**imprimirTabla()**` se encarga de mostrar toda la información de la lista de artículos en forma de tabla.
+`imprimirTabla()` se encarga de mostrar toda la información de la lista de artículos en forma de tabla.
 
-`**busqueda(clave)**` se encarga de realizar una búsqueda entre los diferentes artículos buscando aquellos cuyas palabras clave coincidan con la que nosotros le hemos pasado.
+`busqueda(clave)` se encarga de realizar una búsqueda entre los diferentes artículos buscando aquellos cuyas palabras clave coincidan con la que nosotros le hemos pasado.
 Todos los artículos que coinciden se van guardando en un array de artículos que posteriormente serán devueltos.
 
 Cabe destacar que esta función no está completa debido a que, en el ejercicio, se nos pedía que, además de buscar, debía poder filtrar por fecha, nombre, etc. Esta última parte de filtrar no la he podido implementar.
 
-`**exportarAPA(clave)**` busca los articulos que tienen como keyword a la clave que hemos pasado como parámetro. Para hacer esta búsqueda hacemos uso de la función explicada previamente.
+`exportarAPA(clave)` busca los articulos que tienen como keyword a la clave que hemos pasado como parámetro. Para hacer esta búsqueda hacemos uso de la función explicada previamente.
 
 Una vez hemos obtenido todas las coincidencias vamos generando un array de string donde almacenamos cada una de las citas en formato APA.
 
@@ -121,7 +121,7 @@ El procedimiento es el mismo. Averiguamos su tipo para saber en qué lista está
 
   ```typescript
   this.nMoto.splice(this.nMoto.indexOf(vehiculo), 1);
-  ``
+  ```
 
 - `ordenarVelocidad()`: Esta última función nos permite ordenar cada array de vehículos en base a la velocidad a la que circulan. Serán ordenados de menor a mayor velocidad.
 
