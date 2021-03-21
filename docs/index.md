@@ -22,7 +22,7 @@ El resto será completamente igual.
 
 Vamos a diseñar una clase para representar a los pokemon. Cada pokemon tiene una serie de atributos como son el nombre, el peso y altura, el tipo y sus 4 características básicas: ataque, defensa, velocidad y salud.
 
-Entonces, vamos a implementar cada una de estas carácterísticas como atributos privados de la clase. Además, vamos a implementar una variable que denominaremos **HPCOMBAT** donde iremos almacenando la salud actual del pokemon durante el combate, es decir, los puntos de salud restantes después de cada ataque enemigo.
+Entonces, vamos a implementar cada una de estas carácterísticas como atributos privados de la clase. Además, vamos a implementar una variable que denominaremos **hpCombate** donde iremos almacenando la salud actual del pokemon durante el combate, es decir, los puntos de salud restantes después de cada ataque enemigo.
 
 Con esta clase hecha ya podemos representar cualquier pokemon que queramos.
 
@@ -67,20 +67,25 @@ Entonces, a partir de ese ejemplo, planteamos nuestro código. Lo primero es mos
 El resto de funciones son simplemente **getters** usados para acceder a los atributos de la clase.
 
 2. **Clase Gestor**
-[Acceso al código de la clase]()
 
-Esta clase será como una librería de referencias. Por tanto, para almacenar cada uno de los artículos vamos a crear un array de artículos denominado **listaArtículos**.
+  [Acceso al código de la clase]()
 
-Para manipular esta base de datos tenemos las siguientes funciones:
+  Esta clase será como una librería de referencias. Por tanto, para almacenar cada uno de los artículos vamos a crear un array de artículos denominado **listaArtículos**.
 
-**imprimirTabla()** se encarga de mostrar toda la información de la lista de artículos en forma de tabla.
+  Para manipular esta base de datos tenemos las siguientes funciones:
 
-**busqueda(clave)** se encarga de realizar una búsqueda entre los diferentes artículos buscando aquellos cuyas palabras clave coincidan con la que nosotros le hemos pasado.
-Todos los artículos que coinciden se van guardando en un array de artículos que posteriormente serán devueltos.
+  `**imprimirTabla()**` se encarga de mostrar toda la información de la lista de artículos en forma de tabla.
 
-Cabe destacar que esta función no está completa debido a que, en el ejercicio, se nos pedía que, además de buscar, debía poder filtrar por fecha, nombre, etc. Esta última parte de filtrar no la he podido implementar.
+  `**busqueda(clave)**` se encarga de realizar una búsqueda entre los diferentes artículos buscando aquellos cuyas palabras clave coincidan con la que nosotros le hemos pasado.
+  Todos los artículos que coinciden se van guardando en un array de artículos que posteriormente serán devueltos.
 
-**exportarAPA(clave)** busca los articulos que tienen como keyword a la clave que hemos pasado como parámetro. Para hacer esta búsqueda hacemos uso de la función explicada previamente.
+  Cabe destacar que esta función no está completa debido a que, en el ejercicio, se nos pedía que, además de buscar, debía poder filtrar por fecha, nombre, etc. Esta última parte de filtrar no la he podido implementar.
 
-Una vez hemos obtenido todas las coincidencias vamos generando un array de string donde almacenamos cada una de las citas en formato APA.
+  `**exportarAPA(clave)**` busca los articulos que tienen como keyword a la clave que hemos pasado como parámetro. Para hacer esta búsqueda hacemos uso de la función explicada previamente.
 
+  Una vez hemos obtenido todas las coincidencias vamos generando un array de string donde almacenamos cada una de las citas en formato APA.
+
+### EJERCICIO 3 - Medios de transporte
+
+1. **Interface Movable**
+Tal y como nos pide el ejercicio, debemos representar una interfaz denominada Movable. Esta interfaz contiene 
