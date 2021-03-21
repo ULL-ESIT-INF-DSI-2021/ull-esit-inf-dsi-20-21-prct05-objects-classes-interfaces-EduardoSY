@@ -43,7 +43,64 @@ El resto será completamente igual.
   [Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-1/combat.ts)
 
   Ahora es turno de la clase **Combat**. La idea de esta clase es represenatar un combate entre dos pokemon por lo que, como es de esperar, debemos darle dos pokemon con los que luchar.
-  Además de almacenar los dos pokemon del combate en la clase, vamos a almacenar un 3 atributo: un array de dos elementos donde guardaremos el daño que realiza cada pokemon en base al tipo de cada uno y la efectividad. Estos valores los obtenemos gracias a la funcion **calculoCombate**.
+  Además de almacenar los dos pokemon del combate en la clase, vamos a almacenar un 3 atributo: un array de dos elementos donde guardaremos el daño que realiza cada pokemon en base al tipo de cada uno y la efectividad. Estos valores los obtenemos gracias a la funcion `calculoCombate`:
+  ```typescript
+  calculoCombate(tipo1: string, tipo2: string,
+      ataque: number, defensa: number): number {
+    let efectividad: number = 0; // Variable de efectividad del ataque
+    if (tipo1 === tipo2) {
+      efectividad = 0.5;
+    } else if (tipo1 === 'Fuego') {
+      switch (tipo2) {
+        case 'Hierba':
+          efectividad = 2;
+          break;
+        case 'Electrico':
+          efectividad = 1;
+          break;
+        case 'Agua':
+          efectividad = 0.5;
+          break;
+      }
+    } else if (tipo1 === 'Agua') {
+      switch (tipo2) {
+        case ('Hierba'):
+        case ('Electrico'):
+          efectividad = 0.5;
+          break;
+        case 'Fuego':
+          efectividad = 2;
+          break;
+      }
+    } else if (tipo1 === 'Electrico') {
+      switch (tipo2) {
+        case ('Fuego'):
+        case ('Hierba)'):
+          efectividad = 1;
+          break;
+        case 'Agua':
+          efectividad = 2;
+          break;
+      }
+    } else {
+      switch (tipo2) {
+        case 'Electrico':
+          efectividad = 1;
+          break;
+        case 'Agua':
+          efectividad = 2;
+          break;
+        case 'Fuego':
+          efectividad = 0.5;
+          break;
+      }
+    }
+
+    let damage: number = 50 * (ataque/defensa) * efectividad;
+    return parseFloat(damage.toFixed(2));
+  }
+}
+  ```
 
   Con todo lo establecido anteriormente podemos empezar el combate. En esta simulación **siempre** atacará primero el pokemon que esté como primer parámetro. La velocidad no va a influir en este contexto.
 
