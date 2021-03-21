@@ -20,7 +20,7 @@ class Pokedex {
             console.log('Imposible eliminar. Pokemon no encontrado');
         }
         else {
-            let remove = this.datosPokemon.splice(pos, 1);
+            this.datosPokemon.splice(pos, 1);
         }
     }
     ;

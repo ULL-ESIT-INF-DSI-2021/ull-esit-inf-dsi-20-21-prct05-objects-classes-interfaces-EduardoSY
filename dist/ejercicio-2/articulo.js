@@ -53,3 +53,5 @@ class Articulo {
 }
 exports.Articulo = Articulo;
 ;
+const articulo1 = new Articulo("A modified descent method-based...", ["Isma Dahmani", "Mhand Hifi"], ["isma@gmail.com,", "mhand@gmail.com"], ["Optimization", "Binary"], "Cosas de grafos y demás", '2021', "SpringerLink", 2);
+console.log(articulo1.apasinDOI());
