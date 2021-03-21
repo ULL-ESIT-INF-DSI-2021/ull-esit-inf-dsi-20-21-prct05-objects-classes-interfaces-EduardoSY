@@ -12,7 +12,13 @@ El resto será completamente igual.
 
 
 ## 3. Desarrollo de la práctica
+
 **[Acceso a la documentación generada con Typedoc](./docum/index.html)**
+
+**[Acceso al directorio de codigo fuente](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src)**
+
+**[Acceso al directorio de pruebas unitarias](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/tests)**
+
 ### EJERCICIO 1 - Pokedex
 
 [Acceso a la documentación generada con Typedoc](./docum/index.html)
@@ -99,7 +105,6 @@ El resto será completamente igual.
     let damage: number = 50 * (ataque/defensa) * efectividad;
     return parseFloat(damage.toFixed(2));
   }
-}
   ```
 
   Con todo lo establecido anteriormente podemos empezar el combate. En esta simulación **siempre** atacará primero el pokemon que esté como primer parámetro. La velocidad no va a influir en este contexto.
