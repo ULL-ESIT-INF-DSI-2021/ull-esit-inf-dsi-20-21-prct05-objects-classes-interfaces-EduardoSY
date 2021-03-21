@@ -87,19 +87,19 @@ Una vez hemos obtenido todas las coincidencias vamos generando un array de strin
 
 ### EJERCICIO 3 - Medios de transporte
 
-  1. **Interface Movable**
-    Tal y como nos pide el ejercicio, debemos representar una interfaz denominada Movable. Esta interfaz contiene os atributos que, a mi criterio, son necesarios para cualquier tipo de vehículo.
+1. **Interface Movable**
+Tal y como nos pide el ejercicio, debemos representar una interfaz denominada Movable. Esta interfaz contiene os atributos que, a mi criterio, son necesarios para cualquier tipo de vehículo.
 
-    Estos son: nombre del vehículo (por ejemplo, una marca), numero de ruedas, velocidad a la que circula y capacidad de transporte que tiene.
+Estos son: nombre del vehículo (por ejemplo, una marca), numero de ruedas, velocidad a la que circula y capacidad de transporte que tiene.
 
-  2. **Clases Coche, Moto, Bicicleta, Patin, Peaton, Tren**
-    Todas estas clases son iguales. Todas extienden la interfaz Movable. Además, todas tienen sus getters para poder acceder a los atributos de cada una.
+2. **Clases Coche, Moto, Bicicleta, Patin, Peaton, Tren**
+Todas estas clases son iguales. Todas extienden la interfaz Movable. Además, todas tienen sus getters para poder acceder a los atributos de cada una.
 
-    3. **Clase Street**
-    Esta clase es la que representará a la calle. Para nuestro caso vamos a definir que la calle necesita:
-    - Nombre de la calle
-    - Localización de la calle
-    - Cantidad de vehículos que circulan de cada tipo
-      Para este punto hemos creado un array por cada tipo de vehículo que hemos definido anteriormente. De esta manera, cuando creemos un objeto Street, debemos definir cuantos objeto de cada tipo de vehículo hay en ese momento. Si está vacio entendemos que no hay ningún vehículo de ese tipo en ese momento.
-      
-      La implementación por arrays nos permite saber cuantos vehículos de cada tipo hay de manera sencilla. Así mismo, cuando tengamos que ordenar por velocidad será mucho más sencillo ya que ordenamos cada categoría de manera independiente.
+3. **Clase Street**
+Esta clase es la que representará a la calle. Para nuestro caso vamos a definir que la calle necesita:
+- Nombre de la calle
+- Localización de la calle
+- Cantidad de vehículos que circulan de cada tipo
+  Para este punto hemos creado un array por cada tipo de vehículo que hemos definido anteriormente. De esta manera, cuando creemos un objeto Street, debemos definir cuantos objeto de cada tipo de vehículo hay en ese momento. Si está vacio entendemos que no hay ningún vehículo de ese tipo en ese momento.
+  
+  La implementación por arrays nos permite saber cuantos vehículos de cada tipo hay de manera sencilla. Así mismo, cuando tengamos que ordenar por velocidad será mucho más sencillo ya que ordenamos cada categoría de manera independiente.
