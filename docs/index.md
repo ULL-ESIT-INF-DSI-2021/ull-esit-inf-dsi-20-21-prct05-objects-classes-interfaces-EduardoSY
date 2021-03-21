@@ -21,23 +21,22 @@ El resto será completamente igual.
 
   [Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-1/pokemon.ts)
 
-    Vamos a diseñar una clase para representar a los pokemon. Cada pokemon tiene una serie de atributos como son el nombre, el peso y altura, el tipo y sus 4 características básicas: ataque, defensa, velocidad y salud.
+  Vamos a diseñar una clase para representar a los pokemon. Cada pokemon tiene una serie de atributos como son el nombre, el peso y altura, el tipo y sus 4 características básicas: ataque, defensa, velocidad y salud.
 
-    Entonces, vamos a implementar cada una de estas carácterísticas como atributos privados de la clase. Además, vamos a implementar una variable que denominaremos **hpCombate** donde iremos almacenando la salud actual del pokemon durante el combate, es decir, los puntos de salud restantes después de cada ataque enemigo.
+  Entonces, vamos a implementar cada una de estas carácterísticas como atributos privados de la clase. Además, vamos a implementar una variable que denominaremos **hpCombate** donde iremos almacenando la salud actual del pokemon durante el combate, es decir, los puntos de salud restantes después de cada ataque enemigo.
 
-    En cuanto a funciones tenemos:
-      - Getters
-      - `showData()` Esta funcion muestra el nombre el pokemon, su tipo, su ataque, defensa y salud máxima.
-      
-      ```typescript
-      showData() {
-      console.log("Pokemon -> " + this.getName() + " Tipo: " +
-      this.getType() + " Atk. " + this.getAttack() + " Def. " +
-      this.getDef() + " HP. " + this.getMaxHP());
-      }
-      ```
-      
-    Con esta clase hecha ya podemos representar cualquier pokemon que queramos.
+  En cuanto a funciones tenemos:
+    - Getters
+    - `showData()` Esta funcion muestra el nombre el pokemon, su tipo, su ataque, defensa y salud máxima.
+    ```typescript
+    showData() {
+    console.log("Pokemon -> " + this.getName() + " Tipo: " +
+    this.getType() + " Atk. " + this.getAttack() + " Def. " +
+    this.getDef() + " HP. " + this.getMaxHP());
+    }
+    ```
+    
+  Con esta clase hecha ya podemos representar cualquier pokemon que queramos.
 
 - **Clase Combat**
 
