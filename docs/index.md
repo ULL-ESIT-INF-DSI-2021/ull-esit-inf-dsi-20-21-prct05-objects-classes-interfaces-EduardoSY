@@ -43,8 +43,7 @@ El resto será completamente igual.
   [Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-1/combat.ts)
 
   Ahora es turno de la clase **Combat**. La idea de esta clase es represenatar un combate entre dos pokemon por lo que, como es de esperar, debemos darle dos pokemon con los que luchar.
-  Además de almacenar los dos pokemon del combate en la clase, vamos a almacenar un 3 atributo: un array de dos elementos donde guardaremos el daño que realiza cada pokemon en base
-  al tipo de cada uno y la efectividad. Estos valores los obtenemos gracias a la funcion **calculoCombate**.
+  Además de almacenar los dos pokemon del combate en la clase, vamos a almacenar un 3 atributo: un array de dos elementos donde guardaremos el daño que realiza cada pokemon en base al tipo de cada uno y la efectividad. Estos valores los obtenemos gracias a la funcion **calculoCombate**.
 
   Con todo lo establecido anteriormente podemos empezar el combate. En esta simulación **siempre** atacará primero el pokemon que esté como primer parámetro. La velocidad no va a influir en este contexto.
 
@@ -52,9 +51,48 @@ El resto será completamente igual.
 
   Cuando acabe el combate se mostrará y retornará el ganador.
 
+  Todo el combate se realiza gracias a la funcion `combatir()`:
+  ```typescript
+
+    combatir(): Pokemon {
+    this.datos[0] = this.calculoCombate(this.poke1.getType(),
+        this.poke2.getType(), this.poke1.getAttack(), this.poke2.getDef());
+    this.datos[1] = this.calculoCombate(this.poke2.getType(),
+        this.poke1.getType(), this.poke2.getAttack(), this.poke1.getDef());
+    let iterator: number = 1;
+    console.log("\n## COMBATE POKEMON ##\n" +
+    this.poke1.getName() + " - VS - " + this.poke2.getName());
+    while ((this.poke1.hpCombate > 0) && (this.poke2.hpCombate > 0)) {
+      console.log("\n -[ Ronda " + iterator + " ]-");
+      if ((iterator % 2) == 0) {
+        console.log(this.poke2.getName() + " inflinje -" + this.datos[1] +
+        " a " + this.poke1.getName());
+        this.poke1.hpCombate -= this.datos[1];
+      } else {
+        console.log(this.poke1.getName() + " inflinje -" + this.datos[0] +
+        " a " + this.poke2.getName());
+        this.poke2.hpCombate -= this.datos[0];
+      }
+      iterator++;
+      console.log(this.poke1.getName() + " [HP: " +
+      +(this.poke1.hpCombate).toFixed(2) + "] VS " +
+      this.poke2.getName() + " [HP: " +
+      +(this.poke2.hpCombate).toFixed(2) + "]");
+    }
+    console.log("\n -> GANADOR: " +
+    (this.poke1.hpCombate <= 0?this.poke2.getName() : this.poke1.getName()));
+
+    if (this.poke1.hpCombate <= 0) {
+      return this.poke2;
+    } else {
+      return this.poke1;
+    }
+  }
+  ```
+
 - **Clase Pokedex**
 
-[Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-1/pokedex.ts)
+  [Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-1/pokedex.ts)
 
   Esta clase va a albergar distintos Pokemon en una base de datos. Esta base de datos será un array de Pokemon.
 
