@@ -465,7 +465,7 @@ Para tener el planteamiento completo de los ejercicios puede acceder al [Guión 
   ```
 
 ## 4. Conclusión
-Ya poco a poco vamos notando cómo la complejidad de las prácticas aumenta. Aunque ciertamente no es nada excesivamente complicado, algunos aspectos se me \"atragantaron\". Esto lo he podido notar en la correción presencial ya que, aunque el ejercicio no fue en absoluto dificl, tuve algunos problemas al inicio del ejercicio. Por ello me he dado cuenta de que debo profundizar más en los conceptos de TDD. 
+Ya poco a poco vamos notando cómo la complejidad de las prácticas aumenta. Aunque ciertamente no es nada excesivamente complicado, algunos aspectos se me \"atragantaron\". Esto lo he podido notar en la correción presencial ya que, aunque el ejercicio no fue en absoluto dificil, tuve algunos problemas al inicio del ejercicio. Por ello me he dado cuenta de que debo profundizar más en los conceptos de TDD. 
 
 Además, cabe destacar que este tipo de ejercicios, con planteamientos tan amenos y dinámicos hace que la realización de las prácticas sea mucho más llevadera.
 
