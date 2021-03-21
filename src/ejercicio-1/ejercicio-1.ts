@@ -1,6 +1,5 @@
 import {Pokemon} from './pokemon';
 import {Combat} from './combat';
-import {Pokedex} from './pokedex';
 
 
 let poke1: Pokemon = new Pokemon("Pikachu", 6, 4, "Electrico", [54, 22,
