@@ -103,3 +103,11 @@ Esta clase es la que representará a la calle. Para nuestro caso vamos a definir
   Para este punto hemos creado un array por cada tipo de vehículo que hemos definido anteriormente. De esta manera, cuando creemos un objeto Street, debemos definir cuantos objeto de cada tipo de vehículo hay en ese momento. Si está vacio entendemos que no hay ningún vehículo de ese tipo en ese momento.
   
   La implementación por arrays nos permite saber cuantos vehículos de cada tipo hay de manera sencilla. Así mismo, cuando tengamos que ordenar por velocidad será mucho más sencillo ya que ordenamos cada categoría de manera independiente.
+
+Dentro de esta clase tenemos las siguientes funciones:
+
+- `infoCalle` El objetivo de esta función es mostrar cómo está la situación en la calle. Nos muestra cuántos vehículos de cada tipo están circulando por la calle en forma de tabla.
+
+- `addVehiculo(vehiculo)` Esta funcion nos permite agregar un vehículo a la calle. Como recordamos, dentro de la calle tenemos distintos tipos de vehículos que son almacenados en arrays.
+
+  Una vez hemos recibido el vehículo averiguamos qué tipo es, es decir, si es un coche, una moto, etc. Para ello hacemos uso de **instanceof**. Entonces, dependiendo del tipo hacemos un push al array correspondiente.
