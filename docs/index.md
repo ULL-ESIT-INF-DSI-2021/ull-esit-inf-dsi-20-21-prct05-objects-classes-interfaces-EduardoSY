@@ -27,6 +27,8 @@ El resto será completamente igual.
 
   [Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-1/pokemon.ts)
 
+  [Acceso a las pruebas de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/tests/ejercicio-1-tests/pokemon.spec.ts)
+
   Vamos a diseñar una clase para representar a los pokemon. Cada pokemon tiene una serie de atributos como son el nombre, el peso y altura, el tipo y sus 4 características básicas: ataque, defensa, velocidad y salud.
 
   Entonces, vamos a implementar cada una de estas carácterísticas como atributos privados de la clase. Además, vamos a implementar una variable que denominaremos **hpCombate** donde iremos almacenando la salud actual del pokemon durante el combate, es decir, los puntos de salud restantes después de cada ataque enemigo.
@@ -47,6 +49,8 @@ El resto será completamente igual.
 - **Clase Combat**
 
   [Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-1/combat.ts)
+
+  [Acceso a las pruebas de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/tests/ejercicio-1-tests/combat.spec.ts)
 
   Ahora es turno de la clase **Combat**. La idea de esta clase es represenatar un combate entre dos pokemon por lo que, como es de esperar, debemos darle dos pokemon con los que luchar.
   Además de almacenar los dos pokemon del combate en la clase, vamos a almacenar un 3 atributo: un array de dos elementos donde guardaremos el daño que realiza cada pokemon en base al tipo de cada uno y la efectividad. Estos valores los obtenemos gracias a la funcion `calculoCombate`:
@@ -156,6 +160,8 @@ El resto será completamente igual.
 
   [Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-1/pokedex.ts)
 
+  [Acceso a las pruebas de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/tests/ejercicio-1-tests/pokedex.spec.ts)
+
   Esta clase va a albergar distintos Pokemon en una base de datos. Esta base de datos será un array de Pokemon.
 
   Dentro de esta clase tenemos algunas funciones para interactuar con la base de datos:
@@ -201,13 +207,16 @@ El resto será completamente igual.
 ### EJERCICIO 2 - Gestor bibliográfico
 
 - **Clase Articulo**
-[Acceso al código de la clase]()
+
+  [Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-2/articulo.ts)
+
+  [Acceso a las pruebas de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/tests/ejercicio-2-tests/articulo.spec.ts)
 
   Esta clase la creamos con el objetivo de poder representar cada Articulo de una manera independiente.
 
   Como atributos tendremos la información relativa al artículo. En este caso serán todos atributos privatos. Tenemos uno para el título, un array para los autores, un array para sus correspondientes correos de contacto, un array para las palabras clave, un resumen del articulo, la fecha, editorial y cantidad de citas.
 
-  Tenemos la función **apasinDoi()**. El objetivo de esta función es transformar la información que tenemos almacenada sobre el artículo a una referencia en formato APA. 
+  Tenemos la función `apasinDoi()`. El objetivo de esta función es transformar la información que tenemos almacenada sobre el artículo a una referencia en formato APA. 
   Un ejemplo de formato APA sería el siguiente:
 
   ```
@@ -216,27 +225,77 @@ El resto será completamente igual.
   ```
 
   Entonces, a partir de ese ejemplo, planteamos nuestro código. Lo primero es mostrar a los autores, mostrando primero su apellido y luego la inicial de su nombre. Hacemos esto con todos los autores. A continuación debemos mostrar la fecha de publicación entre paréntesis, seguido del título y la editorial (o revista que lo publica).
+  
+  ```typescript
+  public apasinDOI(): string {
+    let resultado: string = '';
+    for (let i = 0; i < this.getAutor().length; i++) {
+      let autorAux: string[] = this.getAutor()[i].split(" ");
+      resultado += autorAux[1] + ", " + autorAux[0][0] + ". ";
+      if (i < this.getAutor().length - 1) {
+        resultado += "y ";
+      }
+    }
+
+    resultado += "(" + this.getFecha() + "). ";
+    resultado += this.getTitulo() + ". ";
+    resultado += this.getEditorial() + ".";
+    return resultado;
+  }
+  ```
 
   El resto de funciones son simplemente **getters** usados para acceder a los atributos de la clase.
 
 - **Clase Gestor**
 
-[Acceso al código de la clase]()
+  [Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-2/gestor.ts)
+
+  [Acceso a las pruebas de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/tests/ejercicio-2-tests/gestor.spec.ts)
 
   Esta clase será como una librería de referencias. Por tanto, para almacenar cada uno de los artículos vamos a crear un array de artículos denominado **listaArtículos**.
 
   Para manipular esta base de datos tenemos las siguientes funciones:
 
   - `imprimirTabla()` se encarga de mostrar toda la información de la lista de artículos en forma de tabla.
+  ```typescript
+   public imprimirTabla() {
+    console.table(this.listaArticulos);
+  }
+  ```
 
   - `busqueda(clave)` se encarga de realizar una búsqueda entre los diferentes artículos buscando aquellos cuyas palabras clave coincidan con la que nosotros le hemos pasado.
     Todos los artículos que coinciden se van guardando en un array de artículos que posteriormente serán devueltos.
 
     Cabe destacar que esta función no está completa debido a que, en el ejercicio, se nos pedía que, además de buscar, debía poder filtrar por fecha, nombre, etc. Esta última parte de filtrar no la he podido implementar.
+  ```typescript
+   public busqueda(clave: string): Articulo[] {
+    let resultado: Articulo[] = [];
+    for (let articulo of this.listaArticulos) {
+      for (let key of articulo.getClaves()) {
+        if (key === clave) {
+          resultado.push(articulo);
+          break;
+        }
+      }
+    }
+    return resultado;
+  }
+  ```
 
   - `exportarAPA(clave)` busca los articulos que tienen como keyword a la clave que hemos pasado como parámetro. Para hacer esta búsqueda hacemos uso de la función explicada previamente.
 
   Una vez hemos obtenido todas las coincidencias vamos generando un array de string donde almacenamos cada una de las citas en formato APA.
+  ```typescript
+  public exportarAPA(clave: string): string[] {
+    let resultBusqueda: Articulo[] = this.busqueda(clave);
+    let resultExport: string[] = [];
+    for ( let element of resultBusqueda) {
+      resultExport.push(element.apasinDOI());
+    }
+    return resultExport;
+  }
+  ```
+
 
 ### EJERCICIO 3 - Medios de transporte
 
