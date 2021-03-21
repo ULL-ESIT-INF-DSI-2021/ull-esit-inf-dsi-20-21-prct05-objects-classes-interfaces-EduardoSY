@@ -66,8 +66,23 @@ El resto será completamente igual.
     this.datosPokemon.push(pokemon);
   }
   ```
-
-  una funcion para eliminar un pokemon de la pokedex **delPokemon(pokemon)** y una funcion para realizar una búsqueda en la pokedex, **buscarPokemon**.
+  - `delPokemon(pokemon)`: Funcion para eliminar a un pokemon de la pokedex.
+  ```typescript
+  public delPokemon(pokemon: Pokemon) {
+    let pos: number = -1;
+    this.datosPokemon.forEach((iter) => {
+      if (iter === pokemon) {
+        pos = this.datosPokemon.indexOf(iter);
+      }
+    });
+    if (pos == -1) {
+      console.log('Imposible eliminar. Pokemon no encontrado');
+    } else {
+      this.datosPokemon.splice(pos, 1);
+    }
+  };
+  ```
+  - `buscarPokemon`: Funcion para realizar una búsqueda en la pokedex. 
   ```typescript
     public buscarPokemon(pokemon: Pokemon) {
     let pos: number = -1;
