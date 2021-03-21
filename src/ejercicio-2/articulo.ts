@@ -99,7 +99,7 @@ export class Articulo {
       let autorAux: string[] = this.getAutor()[i].split(" ");
       resultado += autorAux[1] + ", " + autorAux[0][0] + ". ";
       if (i < this.getAutor().length - 1) {
-        resultado += "& ";
+        resultado += "y ";
       }
     }
 
