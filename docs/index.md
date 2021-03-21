@@ -14,7 +14,7 @@ El resto será completamente igual.
 
 **[Acceso a la documentación generada con Typedoc](./docum/index.html)**
 
-**[Acceso al directorio de codigo fuente](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src)**
+**[Acceso al directorio de código fuente](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src)**
 
 **[Acceso al directorio de pruebas unitarias](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/tests)**
 
