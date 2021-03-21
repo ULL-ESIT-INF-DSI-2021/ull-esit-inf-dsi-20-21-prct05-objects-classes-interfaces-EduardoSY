@@ -48,46 +48,58 @@ Dentro de esta clase tenemos algunas funciones para interactuar con la base de d
 
 ### EJERCICIO 2 - Gestor bibliográfico
 
-  1. **Clase Articulo**
-    [Acceso al código de la clase]()
+- **Clase Articulo**
+[Acceso al código de la clase]()
 
-    Esta clase la creamos con el objetivo de poder representar cada Articulo de una manera independiente.
+Esta clase la creamos con el objetivo de poder representar cada Articulo de una manera independiente.
 
-    Como atributos tendremos la información relativa al artículo. En este caso serán todos atributos privatos. Tenemos uno para el título, un array para los autores, un array para sus correspondientes correos de contacto, un array para las palabras clave, un resumen del articulo, la fecha, editorial y cantidad de citas.
+Como atributos tendremos la información relativa al artículo. En este caso serán todos atributos privatos. Tenemos uno para el título, un array para los autores, un array para sus correspondientes correos de contacto, un array para las palabras clave, un resumen del articulo, la fecha, editorial y cantidad de citas.
 
-    Tenemos la función **apasinDoi()**. El objetivo de esta función es transformar la información que tenemos almacenada sobre el artículo a una referencia en formato APA. 
-    Un ejemplo de formato APA sería el siguiente:
-    ```
-    Sillick, T. J. y Schutte, N. S. (2006). Emotional intelligence and self-esteem mediate between perceived early parental
-    love and adult happiness. E-Journal of Applied Psychology, 2(2), 28-48
-    ```
+Tenemos la función **apasinDoi()**. El objetivo de esta función es transformar la información que tenemos almacenada sobre el artículo a una referencia en formato APA. 
+Un ejemplo de formato APA sería el siguiente:
+```
+Sillick, T. J. y Schutte, N. S. (2006). Emotional intelligence and self-esteem mediate between perceived early parental
+love and adult happiness. E-Journal of Applied Psychology, 2(2), 28-48
+```
 
-    Entonces, a partir de ese ejemplo, planteamos nuestro código. Lo primero es mostrar a los autores, mostrando primero su apellido y luego la inicial de su nombre. Hacemos esto con todos los autores. A continuación debemos mostrar la fecha de publicación entre paréntesis, seguido del título y la editorial (o revista que lo publica).
+Entonces, a partir de ese ejemplo, planteamos nuestro código. Lo primero es mostrar a los autores, mostrando primero su apellido y luego la inicial de su nombre. Hacemos esto con todos los autores. A continuación debemos mostrar la fecha de publicación entre paréntesis, seguido del título y la editorial (o revista que lo publica).
 
-    El resto de funciones son simplemente **getters** usados para acceder a los atributos de la clase.
+El resto de funciones son simplemente **getters** usados para acceder a los atributos de la clase.
 
-  2. **Clase Gestor**
+- **Clase Gestor**
 
-    [Acceso al código de la clase]()
+[Acceso al código de la clase]()
 
-    Esta clase será como una librería de referencias. Por tanto, para almacenar cada uno de los artículos vamos a crear un array de artículos denominado **listaArtículos**.
+Esta clase será como una librería de referencias. Por tanto, para almacenar cada uno de los artículos vamos a crear un array de artículos denominado **listaArtículos**.
 
-    Para manipular esta base de datos tenemos las siguientes funciones:
+Para manipular esta base de datos tenemos las siguientes funciones:
 
-    `**imprimirTabla()**` se encarga de mostrar toda la información de la lista de artículos en forma de tabla.
+`**imprimirTabla()**` se encarga de mostrar toda la información de la lista de artículos en forma de tabla.
 
-    `**busqueda(clave)**` se encarga de realizar una búsqueda entre los diferentes artículos buscando aquellos cuyas palabras clave coincidan con la que nosotros le hemos pasado.
-    Todos los artículos que coinciden se van guardando en un array de artículos que posteriormente serán devueltos.
+`**busqueda(clave)**` se encarga de realizar una búsqueda entre los diferentes artículos buscando aquellos cuyas palabras clave coincidan con la que nosotros le hemos pasado.
+Todos los artículos que coinciden se van guardando en un array de artículos que posteriormente serán devueltos.
 
-    Cabe destacar que esta función no está completa debido a que, en el ejercicio, se nos pedía que, además de buscar, debía poder filtrar por fecha, nombre, etc. Esta última parte de filtrar no la he podido implementar.
+Cabe destacar que esta función no está completa debido a que, en el ejercicio, se nos pedía que, además de buscar, debía poder filtrar por fecha, nombre, etc. Esta última parte de filtrar no la he podido implementar.
 
-    `**exportarAPA(clave)**` busca los articulos que tienen como keyword a la clave que hemos pasado como parámetro. Para hacer esta búsqueda hacemos uso de la función explicada previamente.
+`**exportarAPA(clave)**` busca los articulos que tienen como keyword a la clave que hemos pasado como parámetro. Para hacer esta búsqueda hacemos uso de la función explicada previamente.
 
-    Una vez hemos obtenido todas las coincidencias vamos generando un array de string donde almacenamos cada una de las citas en formato APA.
+Una vez hemos obtenido todas las coincidencias vamos generando un array de string donde almacenamos cada una de las citas en formato APA.
 
 ### EJERCICIO 3 - Medios de transporte
 
-1. **Interface Movable**
-Tal y como nos pide el ejercicio, debemos representar una interfaz denominada Movable. Esta interfaz contiene os atributos que, a mi criterio, son necesarios para cualquier tipo de vehículo.
+  1. **Interface Movable**
+    Tal y como nos pide el ejercicio, debemos representar una interfaz denominada Movable. Esta interfaz contiene os atributos que, a mi criterio, son necesarios para cualquier tipo de vehículo.
 
-Estos son: 
+    Estos son: nombre del vehículo (por ejemplo, una marca), numero de ruedas, velocidad a la que circula y capacidad de transporte que tiene.
+
+  2. **Clases Coche, Moto, Bicicleta, Patin, Peaton, Tren**
+    Todas estas clases son iguales. Todas extienden la interfaz Movable. Además, todas tienen sus getters para poder acceder a los atributos de cada una.
+
+    3. **Clase Street**
+    Esta clase es la que representará a la calle. Para nuestro caso vamos a definir que la calle necesita:
+    - Nombre de la calle
+    - Localización de la calle
+    - Cantidad de vehículos que circulan de cada tipo
+      Para este punto hemos creado un array por cada tipo de vehículo que hemos definido anteriormente. De esta manera, cuando creemos un objeto Street, debemos definir cuantos objeto de cada tipo de vehículo hay en ese momento. Si está vacio entendemos que no hay ningún vehículo de ese tipo en ese momento.
+      
+      La implementación por arrays nos permite saber cuantos vehículos de cada tipo hay de manera sencilla. Así mismo, cuando tengamos que ordenar por velocidad será mucho más sencillo ya que ordenamos cada categoría de manera independiente.
