@@ -18,7 +18,7 @@ El resto será completamente igual.
 [Acceso a la documentación generada con Typedoc](./docum/index.html)
 
 1. **Clase Pokemon**
-[Acceso al código de la clase]()
+[Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-1/pokemon.ts)
 
 Vamos a diseñar una clase para representar a los pokemon. Cada pokemon tiene una serie de atributos como son el nombre, el peso y altura, el tipo y sus 4 características básicas: ataque, defensa, velocidad y salud.
 
@@ -27,7 +27,7 @@ Entonces, vamos a implementar cada una de estas carácterísticas como atributos
 Con esta clase hecha ya podemos representar cualquier pokemon que queramos.
 
 2. **Clase Combat**
-[Acceso al código de la clase]()
+[Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-1/combat.ts)
 
 Ahora es turno de la clase **Combat**. La idea de esta clase es represenatar un combate entre dos pokemon por lo que, como es de esperar, debemos darle dos pokemon con los que luchar.
 Además de almacenar los dos pokemon del combate en la clase, vamos a almacenar un 3 atributo: un array de dos elementos donde guardaremos el daño que realiza cada pokemon en base
@@ -40,7 +40,7 @@ Mientras alguno de los dos pokemon esté vivo iremos realizando ataques por turn
 Cuando acabe el combate se mostrará y retornará el ganador.
 
 3. **Clase Pokedex**
-[Acceso al código de la clase]()
+[Acceso al código de la clase](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-EduardoSY/blob/master/src/ejercicio-1/pokedex.ts)
 
 Esta clase va a albergar distintos Pokemon en una base de datos. Esta base de datos será un array de Pokemon.
 
